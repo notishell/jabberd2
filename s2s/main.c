@@ -648,6 +648,42 @@ int _s2s_populate_whitelist_domains(s2s_t s2s, const char **values, int nvalues)
 }
 
 
+/*
+* Get next token from string *stringp, where tokens are possibly-empty
+* strings separated by characters from delim.
+*
+* Writes NULs into the string at *stringp to end tokens.
+* delim need not remain constant from call to call.
+* On return, *stringp points past the last NUL written (if there might
+* be further tokens), or is NULL (if there are definitely no moretokens).
+*
+* If *stringp is NULL, strsep returns NULL.
+*/
+char *_j_strsep(char **stringp, const char *delim)
+{
+    char *s;
+    const char *spanp;
+    int c, sc;
+    char *tok;
+    if ((s = *stringp)== NULL)
+        return (NULL);
+    for (tok = s;;) {
+        c = *s++;
+        spanp = delim;
+        do {
+            if ((sc =*spanp++) == c) {
+                if (c == 0)
+                    s = NULL;
+                else
+                    s[-1] = 0;
+                *stringp = s;
+                return (tok);
+            }
+        } while (sc != 0);
+    }
+    /* NOTREACHED */
+}
+
 /* Compare a domain with whitelist values.
     The whitelist values may be FQDN or domain only (with no prepended hostname).
     returns 1 on match, 0 on failure to match
@@ -726,7 +762,7 @@ int s2s_domain_in_whitelist(s2s_t s2s, const char *in_domain) {
             segments = NULL;
             return 0;
         }
-        seg_tmp = strsep(&domain_ptr, ".");
+        seg_tmp = _j_strsep(&domain_ptr, ".");
         if (seg_tmp == NULL) {
             break;
         }

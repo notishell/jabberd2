@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1250"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9,00"
+	Version="9.00"
 	Name="sm"
 	ProjectGUID="{FD37421A-5883-48EE-8AF7-342839ED5564}"
 	RootNamespace="sm"
@@ -204,7 +204,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\sm\object.c"
+				RelativePath="..\..\storage\object.c"
 				>
 			</File>
 			<File
@@ -224,7 +224,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\sm\storage.c"
+				RelativePath="..\..\storage\storage.c"
 				>
 			</File>
 			<File

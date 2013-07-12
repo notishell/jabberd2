@@ -124,14 +124,6 @@
 			<Component Id="dbupdate.sqlite" Guid="{609ED973-93AE-4CCF-8B04-661DEBDC466E}">
 				<File Id="dbupdate.sqlite" Name="db-update.sqlite" KeyPath="yes" Vital="yes" />
 			</Component>
-			<Component Id="sqlite.dist.db" Guid="{928DD3B5-F429-45C4-B677-F3A2FFE23051}">
-				<Condition>SQLITE.DB.EXISTS</Condition>
-				<File Id="sqlite.dist.db" Name="sqlite.dist.db" KeyPath="yes" Vital="yes" Source="$(var.TargetDir)\sqlite.db" />
-			</Component>
-			<Component Id="sqlite.db" Guid="{54949691-C375-45B4-9936-D10967CCD0B2}" Permanent="yes">
-				<Condition>NOT SQLITE.DB.EXISTS</Condition>
-				<File Id="sqlite.db" Name="sqlite.db" KeyPath="yes" Vital="yes" />
-			</Component>
 		</DirectoryRef>
 	</Fragment>
 	<Fragment>
@@ -159,8 +151,6 @@
 			<ComponentRef Id="dbupdate.mysql" />
 			<ComponentRef Id="dbsetup.sqlite" />
 			<ComponentRef Id="dbupdate.sqlite" />
-			<ComponentRef Id="sqlite.dist.db" />
-			<ComponentRef Id="sqlite.db" />
 		</ComponentGroup>
 	</Fragment>
 </Wix>

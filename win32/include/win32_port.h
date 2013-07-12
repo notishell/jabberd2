@@ -32,4 +32,12 @@
 #define DEBUG 1
 #endif
 
+#ifndef SIGUSR1
+#define SIGUSR1 11
+#endif
+
+#ifndef SIGUSR2
+#define SIGUSR2 12
+#endif
+
 #endif

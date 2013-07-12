@@ -130,9 +130,9 @@ const char *j_inet_ntop(struct sockaddr_storage *src, char *dst, size_t size)
     {
     case AF_UNSPEC:
     case AF_INET:
-        return inet_ntop(AF_INET, &sin->sin_addr, dst, size);
+        return _j_inet_ntop(AF_INET, &sin->sin_addr, dst, size);
     case AF_INET6:
-        return inet_ntop(AF_INET6, &sin6->sin6_addr, dst, size);
+        return _j_inet_ntop(AF_INET6, &sin6->sin6_addr, dst, size);
     default:
         return NULL;
     }

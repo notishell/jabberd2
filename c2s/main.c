@@ -799,17 +799,18 @@ JABBER_MAIN("jabberd2c2s", "Jabber 2 C2S", "Jabber Open Source Server: Client to
         }
 
         if(c2s_sighup) {
-            log_write(c2s->log, LOG_NOTICE, "reloading some configuration items ...");
             config_t conf;
+            log_write(c2s->log, LOG_NOTICE, "reloading some configuration items ...");
             conf = config_new();
             if (conf && config_load(conf, config_file) == 0) {
-                xhash_free(c2s->stream_redirects);
-                c2s->stream_redirects = xhash_new(523);
 
                 char *req_domain, *to_address, *to_port;
                 config_elem_t elem;
                 int i;
                 stream_redirect_t sr;
+
+                xhash_free(c2s->stream_redirects);
+                c2s->stream_redirects = xhash_new(523);
 
                 elem = config_get(conf, "stream_redirect.redirect");
                 if(elem != NULL)

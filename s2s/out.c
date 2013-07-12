@@ -531,17 +531,19 @@ int out_route(s2s_t s2s, const char *route, int routelen, conn_t *out, int allow
             log_debug(ZONE, "initiating connection to %s", ipport);
 
             /* APPLE: multiple origin_ips may be specified; use IPv6 if possible or otherwise IPv4 */
-            int ip_is_v6 = 0;
-            if (strchr(ip, ':') != NULL)
-                ip_is_v6 = 1;
-            int i;
-            for (i = 0; i < s2s->origin_nips; i++) {
-                // only bother with mio_connect if the src and dst IPs are of the same type
-                if ((ip_is_v6 && (strchr(s2s->origin_ips[i], ':') != NULL)) ||          // both are IPv6
-                            (! ip_is_v6 && (strchr(s2s->origin_ips[i], ':') == NULL)))  // both are IPv4
-                    (*out)->fd = mio_connect(s2s->mio, port, ip, s2s->origin_ips[i], _out_mio_callback, (void *) *out);
+            if (1) {
+                int i;
+                int ip_is_v6 = 0;
+                if (strchr(ip, ':') != NULL)
+                    ip_is_v6 = 1;
+                for (i = 0; i < s2s->origin_nips; i++) {
+                    // only bother with mio_connect if the src and dst IPs are of the same type
+                    if ((ip_is_v6 && (strchr(s2s->origin_ips[i], ':') != NULL)) ||          // both are IPv6
+                        (! ip_is_v6 && (strchr(s2s->origin_ips[i], ':') == NULL)))  // both are IPv4
+                        (*out)->fd = mio_connect(s2s->mio, port, ip, s2s->origin_ips[i], _out_mio_callback, (void *) *out);
 
-                if ((*out)->fd != NULL) break;
+                    if ((*out)->fd != NULL) break;
+                }
             }
 
             if ((*out)->fd == NULL) {

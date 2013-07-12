@@ -56,7 +56,7 @@ inet_ntop_v4 (const void *src, char *dst, size_t size)
 }
 
 JABBERD2_API const char *
-inet_ntop(int af, const void *src, char *dst, size_t size)
+_j_inet_ntop(int af, const void *src, char *dst, size_t size)
 {
     switch (af) {
     case AF_INET :

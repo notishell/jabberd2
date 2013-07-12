@@ -183,9 +183,10 @@ static int _c2s_client_sx_callback(sx_t s, sx_event_t e, void *data, void *arg) 
             /* send a see-other-host error if we're configured to do so */
             redirect = (stream_redirect_t) xhash_get(sess->c2s->stream_redirects, s->req_to);
             if (redirect != NULL) {
+                char *other_host;
                 log_debug(ZONE, "redirecting client's stream using see-other-host for domain: '%s'", s->req_to);
                 len = strlen(redirect->to_address) + strlen(redirect->to_port) + 1;
-                char *other_host = (char *) malloc(len+1);
+                other_host = (char *) malloc(len+1);
                 snprintf(other_host, len+1, "%s:%s", redirect->to_address, redirect->to_port);
                 sx_error_extended(s, stream_err_SEE_OTHER_HOST, other_host);
                 free(other_host);

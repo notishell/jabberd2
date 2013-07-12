@@ -452,7 +452,10 @@ JABBERD2_API int jabber_wrap_service(int argc, char** argv, jmainhandler_t *wrap
 #define HAVE_XML_STOPPARSER
 #if XML_MINOR_VERSION > 0
 /* XML_SetHashSalt is present in expat 2.1.x */
+#if XML_MICRO_VERSION > 0
+/* XML_SetHashSalt is not present in expat 2.1.0 */
 #define HAVE_XML_SETHASHSALT
+#endif
 #endif
 #endif
 

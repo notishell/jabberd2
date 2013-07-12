@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1250"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9,00"
+	Version="9.00"
 	Name="authreg_sqlite"
 	ProjectGUID="{71BD9348-8C42-4BE2-AAC7-41D2AF498553}"
 	RootNamespace="authreg_sqlite"
@@ -62,7 +62,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="sqlite3.lib c2s.lib jabberd2.lib"
+				AdditionalDependencies="c2s.lib jabberd2.lib"
 				OutputFile="../../bin/debug/modules/$(ProjectName).dll"
 				LinkIncremental="2"
 				AdditionalLibraryDirectories="../../lib/debug;../../lib"
@@ -139,7 +139,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="sqlite3.lib c2s.lib jabberd2.lib"
+				AdditionalDependencies="c2s.lib jabberd2.lib"
 				OutputFile="../../bin/modules/$(ProjectName).dll"
 				LinkIncremental="1"
 				AdditionalLibraryDirectories="../../lib"
@@ -184,6 +184,10 @@
 			>
 			<File
 				RelativePath="..\..\..\storage\authreg_sqlite.c"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\storage\sqlite3.c"
 				>
 			</File>
 		</Filter>

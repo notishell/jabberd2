@@ -369,11 +369,11 @@ static int _roster_publish_user_load(mod_instance_t mi, user_t user) {
                                      )
                                    ) {
                                     /* Add thise jid to active table*/
-                                    log_debug(ZONE, "adding published user %s to sm", jid_user(jid));
                                     time_t tfe;
                                     os_t osfe;
 
                                     os_object_t ofe;
+                                    log_debug(ZONE, "adding published user %s to sm", jid_user(jid));
                                     tfe = time(NULL);
                                     osfe = os_new();
                                     ofe = os_object_new(osfe);

@@ -121,7 +121,7 @@ void authreg_free(authreg_t ar) {
 }
 
 /** auth logger */
-inline static void _authreg_auth_log(c2s_t c2s, sess_t sess, const char *method, const char *username, const char *resource, int success) {
+static void _authreg_auth_log(c2s_t c2s, sess_t sess, const char *method, const char *username, const char *resource, int success) {
     log_write(c2s->log, LOG_NOTICE, "[%d] %s authentication %s: %s@%s/%s %s:%d%s%s",
         sess->s->tag, method, success ? "succeeded" : "failed",
         username, sess->host->realm, resource,

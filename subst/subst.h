@@ -89,7 +89,7 @@ JABBERD2_API int gettimeofday(struct timeval *tp, struct timezone *tz);
 JABBERD2_API int inet_aton(const char *cp, struct in_addr *addr);
 #endif
 #ifndef HAVE_INET_NTOP
-JABBERD2_API const char *inet_ntop(int af, const void *src, char *dst, size_t size);
+JABBERD2_API const char *_j_inet_ntop(int af, const void *src, char *dst, size_t size);
 #endif
 #ifndef HAVE_INET_PTON
 JABBERD2_API int inet_pton(int af, const char *src, void *dst);

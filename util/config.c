@@ -353,11 +353,11 @@ static char *_config_expandx(config_t c, const char *value, int l)
         if (var_end) {
             char *tail = var_end + 1;
             char *var = var_start + 2;
-            *var_end = 0;
 
 //             fprintf(stderr, "config_expand: Var '%s', tail is '%s'\n", var, tail);
 
             const char *var_value = config_get_one(c, var, 0);
+            *var_end = 0;
 
             if (var_value) {
                 int len = (var_start - s) + strlen(tail) + strlen(var_value) + 1;

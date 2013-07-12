@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1250"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9,00"
+	Version="9.00"
 	Name="storage_sqlite"
 	ProjectGUID="{929E41F9-EB67-4F61-8B85-15CFBB11349B}"
 	RootNamespace="storage_sqlite"
@@ -62,7 +62,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="sqlite3.lib sm.lib jabberd2.lib"
+				AdditionalDependencies="sm.lib jabberd2.lib"
 				OutputFile="../../bin/debug/modules/$(ProjectName).dll"
 				LinkIncremental="2"
 				AdditionalLibraryDirectories="../../lib/debug;../../lib"
@@ -139,7 +139,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="sqlite3.lib sm.lib jabberd2.lib"
+				AdditionalDependencies="sm.lib jabberd2.lib"
 				OutputFile="../../bin/modules/$(ProjectName).dll"
 				LinkIncremental="1"
 				AdditionalLibraryDirectories="../../lib"
@@ -182,6 +182,10 @@
 			Filter="cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx"
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
+			<File
+				RelativePath="..\..\..\storage\sqlite3.c"
+				>
+			</File>
 			<File
 				RelativePath="..\..\..\storage\storage_sqlite.c"
 				>

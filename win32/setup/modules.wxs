@@ -5,9 +5,6 @@
 			<Component Id="authreg_anon.dll" Guid="{2801B3BA-A499-47E6-B345-3ABA71D9C8DA}">
 				<File Id="authreg_anon.dll" Name="authreg_anon.dll" KeyPath="yes" Vital="yes" />
 			</Component>
-			<Component Id="authreg_mysql.dll" Guid="{FC2B8A7D-07EE-46EB-AC73-B48841454B9E}">
-				<File Id="authreg_mysql.dll" Name="authreg_mysql.dll" KeyPath="yes" Vital="yes" />
-			</Component>
 			<Component Id="authreg_ntlogon.dll" Guid="{50AFB047-D221-412D-BCDD-E2EC87BD0E8B}">
 				<File Id="authreg_ntlogon.dll" Name="authreg_ntlogon.dll" KeyPath="yes" Vital="yes" />
 			</Component>
@@ -89,9 +86,6 @@
 			<Component Id="mod_validate.dll" Guid="{DA34D6BE-2BE4-41C8-AF01-4B13C1024E4B}">
 				<File Id="mod_validate.dll" Name="mod_validate.dll" KeyPath="yes" Vital="yes" />
 			</Component>
-			<Component Id="storage_mysql.dll" Guid="{9DC4348B-D28F-47FF-AD11-0540671A9B8E}">
-				<File Id="storage_mysql.dll" Name="storage_mysql.dll" KeyPath="yes" Vital="yes" />
-			</Component>
 			<Component Id="storage_sqlite.dll" Guid="{2603734F-2F90-4EE4-8A53-63F480841CDA}">
 				<File Id="storage_sqlite.dll" Name="storage_sqlite.dll" KeyPath="yes" Vital="yes" />
 			</Component>
@@ -100,7 +94,6 @@
 	<Fragment>
 		<ComponentGroup Id="Modules">
 			<ComponentRef Id="authreg_anon.dll" />
-			<ComponentRef Id="authreg_mysql.dll" />
 			<ComponentRef Id="authreg_ntlogon.dll" />
 			<ComponentRef Id="authreg_sqlite.dll" />
 			<ComponentRef Id="authreg_sspi.dll" />
@@ -128,7 +121,6 @@
 			<ComponentRef Id="mod_templateroster.dll" />
 			<ComponentRef Id="mod_vacation.dll" />
 			<ComponentRef Id="mod_validate.dll" />
-			<ComponentRef Id="storage_mysql.dll" />
 			<ComponentRef Id="storage_sqlite.dll" />
 		</ComponentGroup>
 	</Fragment>

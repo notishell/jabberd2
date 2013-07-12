@@ -636,6 +636,9 @@
 
 /* Define to `int' if <sys/types.h> does not define. */
 /* #undef mode_t */
+#ifndef mode_t
+#define mode_t int
+#endif
 
 /* Define to `long' if <sys/types.h> does not define. */
 #define off_t _off_t
